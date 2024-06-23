@@ -91,8 +91,10 @@ const ProjectDetail = () => {
       </div>
       <h1 className="project-title text-orange font-bold">{project.title}</h1>
       <h2 className='text-orange font-bold text-start text-2xl'>Project Description</h2>
+      <br></br>
       <p className="project-description">{project.description}</p>
       <h2 className='text-orange font-bold text-start text-2xl'>Project Features</h2>
+      <br></br>
       <div className="project-features" dangerouslySetInnerHTML={{ __html: project.fitur }} />
       <br></br>
 

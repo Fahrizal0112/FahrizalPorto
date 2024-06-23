@@ -73,3 +73,22 @@ body {
     object-fit: cover; 
   }
   
+  @media screen and (max-width: 500px) {
+    .project-box {
+      background: #444;
+      color: white;
+      border-radius: 8px;
+      padding: 20px;
+      width: calc(50% - 20px);
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.3s ease-in-out;
+      padding: 50%;
+    }
+    .project {
+      padding: 30px;
+      background-color: #2E2F34;
+      color: white;
+      margin-bottom: 100px;
+    }
+  }

@@ -174,14 +174,16 @@ html {
   text-align: center;
 }
 
-@media screen and (max-width: 800px) {
-  .about .icons .icon {
-    width: 50px; /* Sesuaikan ukuran ikon */
-    height: auto;
-    margin: 0 60px; /* Atur margin sesuai kebutuhan */
-  }  
-}
+
 @media screen and (max-width: 500px) {
+
+  .intro {
+    display: inline;
+  }
+  
+  .intro .text {
+    flex: 1;
+  }
   .about .icons {
     display: flex;
     flex-wrap: wrap;
@@ -192,17 +194,19 @@ html {
     width: 50px; 
     height: auto;
     margin: 10px;
-    flex: 1 1 calc(50% - 20px); 
-    box-sizing: border-box; 
+
+
   }
   .my-photo {
-    opacity: 0;
+    opacity: 1;
   }
   .myskill {
     background-color: #2E2F34;
     text-align: center;
-    padding-top: 100px; /* Adjust the value as needed to move the heading down */
+    padding-top: 20px; /* Adjust the value as needed to move the heading down */
     margin-bottom: 50px;
+    opacity: 0;
+
     
   }
   .myskill h2 {
@@ -215,7 +219,7 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
+    padding: 5px;
     color: white;
   }
   
@@ -274,28 +278,7 @@ html {
   }
 }
 
-@media screen and (max-height: 900px) {
-  .about {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: left;
-      height: 100vh;
-      padding: 60px;
-      background-color:#34353A ;
-      text-align: center;
-  }
-  .myskill{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    height: 100vh;
-    padding: 60px;
-    background-color:#34353A ;
-    text-align: center;
-  }
-}
+
 @media screen and (max-height: 1600px) {
   .home {
     display: flex;

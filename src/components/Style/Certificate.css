@@ -78,3 +78,14 @@
 .close-button:hover {
   background: rgba(0, 0, 0, 0.8);
 }
+
+@media screen and (max-width: 500px) {
+  .image-box {
+    width: calc(25% - 10px); /* Setiap gambar mengambil seperempat lebar kontainer dikurangi gap */
+    height: 100px; /* Ketinggian tetap untuk kotak gambar */
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+}
