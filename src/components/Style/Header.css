@@ -1,0 +1,115 @@
+/* src/components/Style/Header.css */
+.header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2E2F34;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.header h1 {
+  margin: 0; 
+  margin-right: 30px; /* Mengurangi jarak antara h1 dan navbar */
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #ffff;
+  font-size: 34px; /* Menyesuaikan ukuran font */
+}
+
+.text-white {
+  color: white;
+}
+
+.text-orange {
+  color: orange;
+}
+
+.header nav {
+  display: flex;
+}
+
+.header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Menghilangkan margin default */
+  display: flex;
+}
+
+.header nav ul li {
+  margin: 0 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px; /* Menyesuaikan ukuran font */
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  transition: color 0.3s ease; /* Menambah transisi warna saat hover */
+}
+
+.header nav ul li a:hover {
+  color: orange; /* Mengubah warna saat hover */
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon-line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px;
+  transition: 0.4s;
+}
+
+.menu-icon-line.open:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon-line.open:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and (max-width: 500px) {
+  .header nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #2E2F34;
+    width: 100%;
+    text-align: center;
+  }
+
+  .header nav.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+  }
+
+  .header nav ul li {
+    margin: 10px 0;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}

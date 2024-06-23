@@ -1,0 +1,331 @@
+/* src/components/Style/Home.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+html {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro .text {
+  flex: 1;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  height: 100vh;
+  padding: 60px;
+  background-color:#2E2F34 ;
+  text-align: left;
+}
+
+.about {
+  padding: 80px;
+  background-color: #34353A;
+  text-align: center;
+  padding-top: 110px;
+  padding-bottom: 200px;
+  color: white;
+  opacity: 1;
+  transition: opacity 1s ease; /* Pastikan transition untuk opacity sudah ada */
+}
+
+.about.show {
+  opacity: 1;
+}
+
+.about.fade-out {
+  opacity: 1; /* Opacity menjadi 0 saat class fade-out ditambahkan */
+}
+
+.about .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px; /* Atur margin sesuai kebutuhan */
+}
+
+.about .icons .icon {
+  width: 100px; /* Sesuaikan ukuran ikon */
+  height: auto;
+  margin: 0 60px; /* Atur margin sesuai kebutuhan */
+}
+
+.my-photo {
+  width: 700px; /* Sesuaikan ukuran foto Anda */
+  height: auto;
+  margin-right: -100px; /* Atur margin sesuai kebutuhan */
+  margin-top: 40px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dynamic-text {
+  display: inline-block;
+  animation: fadeInOut 2s linear infinite;
+}
+
+/* myskill */
+
+/* Existing styles */
+
+.myskill {
+  background-color: #2E2F34;
+  text-align: center;
+  padding-top: 100px; /* Adjust the value as needed to move the heading down */
+  margin-bottom: 50px;
+  
+}
+.myskill h2 {
+  margin-bottom: 100px; /* Adjust the value as needed */
+}
+
+
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  color: white;
+}
+
+.circle-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  margin: 10px;
+}
+
+.circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.mask,
+.fill {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.mask {
+  clip: rect(0px, 100px, 100px, 50px);
+}
+
+.fill {
+  clip: rect(0px, 50px, 100px, 0px);
+  background: #ff6a00; /* Adjust the color as needed */
+}
+
+.inside-circle {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: #34353A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 1.2em;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.skill-name {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .about .icons .icon {
+    width: 50px; /* Sesuaikan ukuran ikon */
+    height: auto;
+    margin: 0 60px; /* Atur margin sesuai kebutuhan */
+  }  
+}
+@media screen and (max-width: 500px) {
+  .about .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .about .icons .icon {
+    width: 50px; 
+    height: auto;
+    margin: 10px;
+    flex: 1 1 calc(50% - 20px); 
+    box-sizing: border-box; 
+  }
+  .my-photo {
+    opacity: 0;
+  }
+  .myskill {
+    background-color: #2E2F34;
+    text-align: center;
+    padding-top: 100px; /* Adjust the value as needed to move the heading down */
+    margin-bottom: 50px;
+    
+  }
+  .myskill h2 {
+    margin-bottom: 100px; /* Adjust the value as needed */
+  }
+  
+  
+  .skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .circle-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    margin: 10px;
+  }
+  
+  .circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .mask,
+  .fill {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .mask {
+    clip: rect(0px, 100px, 100px, 50px);
+  }
+  
+  .fill {
+    clip: rect(0px, 50px, 100px, 0px);
+    background: #ff6a00; /* Adjust the color as needed */
+  }
+  
+  .inside-circle {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: #34353A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: 1;
+  }
+  
+  .skill-name {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+@media screen and (max-height: 900px) {
+  .about {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+      height: 100vh;
+      padding: 60px;
+      background-color:#34353A ;
+      text-align: center;
+  }
+  .myskill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 100vh;
+    padding: 60px;
+    background-color:#34353A ;
+    text-align: center;
+  }
+}
+@media screen and (max-height: 1600px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 80vh;
+    padding: 60px;
+    background-color:#2E2F34 ;
+    text-align: left;
+  }
+  .about {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+      height: 100vh;
+      padding: 60px;
+      background-color:#34353A ;
+      text-align: center;
+  }
+  .myskill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 82vh;
+    padding: 60px;
+    background-color:#2E2F34 ;
+    text-align: center;
+  }
+}
+

@@ -1,0 +1,83 @@
+.project-detail {
+    padding: 20px;
+    background-color: #2E2F34;
+    color: white;
+  }
+  
+  .project-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: start;
+  }
+  
+  .project-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: start;
+  }
+  
+  .project-features {
+    font-size: 1em;
+    text-align: start;
+  }
+  
+  .project-features ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .project-features li {
+    margin-bottom: 10px;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* Mengatur lebar maksimum gambar */
+    display: block;
+    margin: 0 auto; /* Menyelaraskan gambar ke tengah dalam kotak gambar */
+  }
+  
+  .image-box1 {
+    width: calc(50% - 300px); /* Setiap gambar mengambil setengah lebar kontainer dikurangi gap */
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-box1:hover {
+    transform: scale(1.05);
+  }
+  @media screen and (max-width: 500px) {
+    .image-box1 {
+        width: calc(60% - 100px); /* Setiap gambar mengambil setengah lebar kontainer dikurangi gap */
+        overflow: hidden;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+  }  
+  .project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .close-button {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 10000; 
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
