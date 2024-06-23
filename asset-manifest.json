@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/FahrizalPorto/static/css/main.cf9b1529.css",
-    "main.js": "/FahrizalPorto/static/js/main.6cf354d2.js",
+    "main.js": "/FahrizalPorto/static/js/main.0fbcaaea.js",
     "static/media/10.png": "/FahrizalPorto/static/media/10.9b0093ca571f49daa826.png",
     "static/media/3.png": "/FahrizalPorto/static/media/3.ff2c9acb7f6de86a3121.png",
     "static/media/21.png": "/FahrizalPorto/static/media/21.5f102df7cf1e58bba3c7.png",
@@ -36,10 +36,10 @@
     "static/media/javascript.svg": "/FahrizalPorto/static/media/javascript.87a6904ffa190a37c824d0b73ff669c4.svg",
     "index.html": "/FahrizalPorto/index.html",
     "main.cf9b1529.css.map": "/FahrizalPorto/static/css/main.cf9b1529.css.map",
-    "main.6cf354d2.js.map": "/FahrizalPorto/static/js/main.6cf354d2.js.map"
+    "main.0fbcaaea.js.map": "/FahrizalPorto/static/js/main.0fbcaaea.js.map"
   },
   "entrypoints": [
     "static/css/main.cf9b1529.css",
-    "static/js/main.6cf354d2.js"
+    "static/js/main.0fbcaaea.js"
   ]
 }
