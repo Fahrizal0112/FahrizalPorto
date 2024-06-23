@@ -9,13 +9,13 @@ const Footer = () => {
         &copy; {new Date().getFullYear()} Fahrizal Portfolio. All rights reserved.
       </div>
       <div className="social-icons">
-        <a href="https://github.com/username" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/fahrizal0112" target="_blank" rel="noopener noreferrer">
           <FaGithub />
         </a>
-        <a href="https://www.instagram.com/username" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/mfachrzl" target="_blank" rel="noopener noreferrer">
           <FaInstagram />
         </a>
-        <a href="https://www.linkedin.com/in/username" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/muchammad-fahrizal/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin />
         </a>
       </div>
