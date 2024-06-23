@@ -311,4 +311,255 @@ html {
     text-align: center;
   }
 }
+@media screen and (max-width: 450px) {
 
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 100vh;
+    padding: 60px;
+    background-color:#2E2F34 ;
+    text-align: left;
+  }
+  
+  .about {
+
+    background-color: #34353A;
+    text-align: center;
+    padding-top: 70lvh;
+    padding-bottom: 70lvh;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s ease; /* Pastikan transition untuk opacity sudah ada */
+  }
+  .about p {
+    font-size: 10px;
+  }
+  .intro {
+    display: inline;
+  }
+  
+  .intro .text {
+    flex: 1;
+  }
+  .about .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .about .icons .icon {
+    width: 50px; 
+    height: auto;
+    margin: 10px;
+
+
+  }
+  .my-photo {
+    opacity: 1;
+  }
+  .myskill {
+    background-color: #2E2F34;
+    text-align: center;
+    padding-top: 80lvh; /* Adjust the value as needed to move the heading down */
+    margin-bottom: 70lvh;
+    opacity: 0;
+
+    
+  }
+  .myskill h2 {
+    margin-bottom: 100px; /* Adjust the value as needed */
+  }
+  
+  
+  .skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px;
+    color: white;
+  }
+  
+  .circle-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    margin: 10px;
+  }
+  
+  .circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .mask,
+  .fill {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .mask {
+    clip: rect(0px, 100px, 100px, 50px);
+  }
+  
+  .fill {
+    clip: rect(0px, 50px, 100px, 0px);
+    background: #ff6a00; /* Adjust the color as needed */
+  }
+  
+  .inside-circle {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: #34353A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: 1;
+  }
+  
+  .skill-name {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 400px) {
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 70lvh;
+    padding: 10px;
+    background-color:#2E2F34 ;
+    text-align: left;
+  }
+  
+  .about {
+    background-color: #34353A;
+    text-align: center;
+    padding-top: 50lvh;
+    padding-bottom: 50lvh;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s ease; /* Pastikan transition untuk opacity sudah ada */
+  }
+  .about p {
+    font-size: 10px;
+  }
+  .intro {
+    display: inline;
+  }
+  
+  .intro .text {
+    flex: 1;
+  }
+  .about .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .about .icons .icon {
+    width: 50px; 
+    height: auto;
+    margin: 10px;
+
+
+  }
+  .my-photo {
+    opacity: 1;
+
+  }
+  .myskill {
+    background-color: #2E2F34;
+    text-align: center;
+    padding-top: 40lvh; /* Adjust the value as needed to move the heading down */
+    margin-bottom: 30lvh;
+    opacity: 0;
+
+    
+  }
+  .myskill h2 {
+    margin-bottom: 100px; /* Adjust the value as needed */
+  }
+  
+  
+  .skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px;
+    color: white;
+  }
+  
+  .circle-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    margin: 10px;
+  }
+  
+  .circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .mask,
+  .fill {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .mask {
+    clip: rect(0px, 100px, 100px, 50px);
+  }
+  
+  .fill {
+    clip: rect(0px, 50px, 100px, 0px);
+    background: #ff6a00; /* Adjust the color as needed */
+  }
+  
+  .inside-circle {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: #34353A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: 1;
+  }
+  
+  .skill-name {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+  }
+}
