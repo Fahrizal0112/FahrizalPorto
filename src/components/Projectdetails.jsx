@@ -11,6 +11,10 @@ import notetify1 from './assets/notetify/1.png';
 import notetify2 from './assets/notetify/2.png';
 import notetify3 from './assets/notetify/3.png';
 import notetify4 from './assets/notetify/4.png';
+import fitmate1 from './assets/fitmate/1.png';
+import fitmate2 from './assets/fitmate/2.png';
+import fitmate3 from './assets/fitmate/3.png';
+import fitmate4 from './assets/fitmate/4.gif';
 
 const projects = [
   {
@@ -50,6 +54,28 @@ const projects = [
       notetify2,
       notetify3,
       notetify4
+    ]
+  },
+  {
+    id: 3,
+    title: 'Fitmate',
+    description: 'Fitmate adalah aplikasi gym yang saya rancang untuk membantu pengguna dalam melakukan latihan dengan benar dan efisien. Menggunakan teknologi Machine Learning, aplikasi ini dapat mendeteksi postur tubuh untuk memastikan posisi yang benar dan menggunakan Object Detection untuk mengenali alat olahraga yang digunakan. Dengan fitur ini, Fitmate dapat memberikan panduan latihan yang sesuai.',
+    fitur: `
+      <ul>
+        <li>Deteksi Postur Tubuh: Menggunakan Machine Learning untuk mendeteksi postur tubuh dan memastikan posisi yang benar saat latihan.</li>
+        <li>Deteksi Alat Olahraga: Object Detection digunakan untuk mengenali alat olahraga dan memberikan instruksi yang tepat.</li>
+        <li>Latihan yang Dipersonalisasi: Aplikasi memberikan panduan latihan yang sesuai berdasarkan analisis postur dan alat yang digunakan.</li>
+        <li>Frontend dengan Kotlin: Aplikasi ini dibangun menggunakan Kotlin untuk antarmuka yang responsif dan mudah digunakan.</li>
+        <li>Backend dengan Hapi.js: Menggunakan Hapi.js untuk manajemen data dan logika aplikasi, serta di-deploy menggunakan Cloud Run dan App Engine.</li>
+        <li>Penyimpanan Aset dengan Cloud Storage: Menggunakan Cloud Storage untuk menyimpan aset aplikasi dengan aman.</li>
+        <li>Database dengan Cloud SQL: Menggunakan Cloud SQL untuk penyimpanan data yang aman dan skalabel.</li>
+      </ul>
+    `,
+    images: [
+      fitmate1,
+      fitmate2,
+      fitmate3,
+      fitmate4
     ]
   }
 ];

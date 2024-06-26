@@ -14,6 +14,11 @@ const projects = [
     title: 'Notetify',
     link: '/project/2'
   },
+  {
+    id: 3,
+    title: 'Fitmate',
+    link: '/project/3'
+  },
   // Add more projects as needed
 ];
 
