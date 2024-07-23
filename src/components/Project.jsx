@@ -19,7 +19,11 @@ const projects = [
     title: 'Fitmate',
     link: '/project/3'
   },
-  // Add more projects as needed
+  {
+    id: 4,
+    title: 'Parkol',
+    link: '/project/4'
+  },
 ];
 
 const Project = () => {

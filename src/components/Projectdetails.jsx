@@ -15,7 +15,9 @@ import fitmate1 from './assets/fitmate/1.png';
 import fitmate2 from './assets/fitmate/2.png';
 import fitmate3 from './assets/fitmate/3.png';
 import fitmate4 from './assets/fitmate/4.gif';
-
+import parkol1 from './assets/parkol/1.png';
+import parkol2 from './assets/parkol/2.png';
+import parkol3 from './assets/parkol/3.png';
 const projects = [
   {
     id: 1,
@@ -76,6 +78,26 @@ const projects = [
       fitmate2,
       fitmate3,
       fitmate4
+    ]
+  },
+  {
+    id: 4,
+    title: 'IOT Parkol',
+    description: 'IOT Parkol adalah aplikasi berbasis IoT yang dirancang untuk mempermudah manajemen parkir dengan menyediakan informasi real-time tentang ketersediaan tempat parkir, memungkinkan pengguna untuk melakukan booking lahan parkir, serta memberikan fitur analisis data untuk admin. Proyek ini memanfaatkan teknologi IoT untuk pemantauan parkir dan menyajikan antarmuka pengguna yang responsif untuk pengelolaan parkir.',
+    fitur: `
+      <ul>
+        <li>Pemantauan Ketersediaan Tempat Parkir: Menggunakan sensor IoT untuk mendeteksi ketersediaan tempat parkir dan menampilkan informasi secara real-time.</li>
+        <li>Booking Tempat Parkir: Fitur untuk memesan tempat parkir yang tersedia dengan konfirmasi dan pembayaran online.</li>
+        <li>Analisis Data untuk Admin: Menyediakan laporan pendapatan dan data statistik pengunjung untuk manajemen parkir yang lebih efisien.</li>
+        <li>Frontend dengan Flutter: Dibangun menggunakan Flutter untuk antarmuka pengguna yang responsif dan mudah digunakan.</li>
+        <li>Backend dengan Hapi.js: Menggunakan Hapi.js untuk pengelolaan data dan logika aplikasi, serta di-deploy menggunakan Cloud Run dan App Engine.</li>
+        <li>Database dengan MySQL: Menyimpan data parkir, pemesanan, dan pengguna dengan aman dan efisien menggunakan MySQL.</li>
+      </ul>
+    `,
+    images: [
+        parkol1,
+        parkol2,
+        parkol3
     ]
   }
 ];
