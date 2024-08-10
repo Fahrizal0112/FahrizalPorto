@@ -26,10 +26,10 @@ import cert20 from "./assets/certificates/20.png";
 import cert21 from "./assets/certificates/21.png";
 import cert22 from "./assets/certificates/22.png"
 import cert23 from "./assets/certificates/23.png";
-import cert24 from "./assets/certificates/24.png";
-import cert25 from "./assets/certificates/25.png";
-import cert26 from "./assets/certificates/26.png";
-import cert27 from "./assets/certificates/27.png";
+import cert24 from "./assets/certificates/24.jpg";
+import cert25 from "./assets/certificates/25.jpg";
+import cert26 from "./assets/certificates/26.jpg";
+import cert27 from "./assets/certificates/27.jpg";
 
 const Certificate = () => {
   const certificates = [
