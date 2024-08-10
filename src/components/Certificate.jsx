@@ -24,7 +24,7 @@ import cert18 from "./assets/certificates/18.png";
 import cert19 from "./assets/certificates/19.png";
 import cert20 from "./assets/certificates/20.png";
 import cert21 from "./assets/certificates/21.png";
-import cert22 from "./assets/certificates/22.png";
+import cert22 from "./assets/certificates/22.png"
 import cert23 from "./assets/certificates/23.png";
 import cert24 from "./assets/certificates/24.png";
 import cert25 from "./assets/certificates/25.png";
@@ -55,7 +55,12 @@ const Certificate = () => {
     { id: 20, image: cert20 },
     { id: 21, image: cert21 },
     { id: 22, image: cert22 },
+    { id: 23, image: cert23 },
+    { id: 24, image: cert24 },
+    { id: 25, image: cert25 },
+    { id: 26, image: cert26 },
     { id: 27, image: cert27 },
+
   ];
 
 
