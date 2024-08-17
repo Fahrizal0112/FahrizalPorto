@@ -18,6 +18,13 @@ import fitmate4 from './assets/fitmate/4.gif';
 import parkol1 from './assets/parkol/1.png';
 import parkol2 from './assets/parkol/2.png';
 import parkol3 from './assets/parkol/3.png';
+import fingoal1 from './assets/fingoal/1.jpg';
+import fingoal2 from './assets/fingoal/2.jpg';
+import fingoal3 from './assets/fingoal/3.jpg';
+import fingoal4 from './assets/fingoal/4.jpg';
+import fingoal5 from './assets/fingoal/5.jpg';
+import fingoal6 from './assets/fingoal/6.jpg';
+
 const projects = [
   {
     id: 1,
@@ -99,7 +106,30 @@ const projects = [
         parkol2,
         parkol3
     ]
-  }
+  },
+  {
+    id: 5,
+    title: 'FinGoal',
+    description: 'Fingoal adalah aplikasi keuangan yang dirancang untuk membantu pengguna dalam mengelola dan mencapai tujuan keuangan mereka dengan cara yang cerdas dan terarah. Aplikasi ini menggabungkan analisis data dan teknologi prediktif untuk memberikan rekomendasi investasi yang sesuai dengan profil risiko pengguna, panduan menabung, serta prediksi pergerakan harga saham.',
+    fitur: `
+      <ul>
+        <li>Check Profile Risk: Fitur ini memungkinkan pengguna untuk mengetahui profil risiko investasi mereka, apakah mereka termasuk dalam kategori konservatif, moderat, atau agresif. Melalui serangkaian pertanyaan yang dirancang khusus, aplikasi akan menganalisis data pengguna dan memberikan hasil yang membantu mereka memahami tingkat toleransi risiko yang sesuai dengan kepribadian dan tujuan keuangan mereka.</li>
+        <li>Savings: Fitur ini membantu pengguna untuk merencanakan dan mencapai tujuan menabung mereka. Setelah mengisi form terkait tujuan finansial, aplikasi akan memberikan panduan langkah demi langkah serta rekomendasi investasi yang disesuaikan dengan kebutuhan dan profil risiko pengguna. Fitur ini dirancang untuk memastikan bahwa pengguna dapat mencapai tujuan keuangan mereka dengan strategi yang efektif dan tepat waktu.</li>
+        <li>Forecast Stocks: Fingoal menawarkan fitur prediksi harga saham yang memungkinkan pengguna untuk melihat perkiraan pergerakan harga saham selama 4 hari ke depan. Menggunakan teknik analisis data dan model prediktif, aplikasi ini memberikan wawasan yang berharga bagi pengguna yang ingin membuat keputusan investasi berbasis data.</li>
+        <li>Personalisasi: Rekomendasi dan panduan yang diberikan disesuaikan dengan profil risiko dan tujuan keuangan individu pengguna.</li>
+        <li>Keputusan Berbasis Data: Dengan menggunakan teknologi bisnis intelijen, Fingoal membantu pengguna membuat keputusan keuangan yang lebih baik berdasarkan analisis data yang canggih.</li>
+        <li>Kemudahan Penggunaan: Aplikasi ini dirancang agar mudah digunakan oleh siapa saja, baik oleh investor pemula maupun yang sudah berpengalaman.</li>
+      </ul>
+    `,
+    images: [
+        fingoal1,
+        fingoal2,
+        fingoal3,
+        fingoal4,
+        fingoal5,
+        fingoal6
+    ],
+}
 ];
 
 const ProjectDetail = () => {

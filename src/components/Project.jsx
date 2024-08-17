@@ -24,6 +24,11 @@ const projects = [
     title: 'Parkol',
     link: '/project/4'
   },
+  {
+    id: 5,
+    title: 'FinGoal',
+    link: '/project/5'
+  },
 ];
 
 const Project = () => {
