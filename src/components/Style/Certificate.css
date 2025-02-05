@@ -25,7 +25,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: #FF6B6B;
+  background: orange;
 }
 
 .certificate-grid {
@@ -125,7 +125,7 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #FF6B6B;
+  background: orange;
   color: white;
   width: 40px;
   height: 40px;
@@ -141,7 +141,7 @@
 }
 
 .close-viewer-button:hover {
-  background: #ff8585;
+  background: orange;
   transform: rotate(90deg);
 }
 

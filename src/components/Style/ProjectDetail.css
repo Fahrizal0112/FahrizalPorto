@@ -24,7 +24,7 @@
   left: 0;
   width: 100px;
   height: 3px;
-  background: #FF6B6B;
+  background: orange;
 }
 
 .project-gallery {
@@ -112,7 +112,7 @@
 }
 
 .section-title {
-  color: #FF6B6B;
+  color: orange;
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -139,7 +139,7 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: #FF6B6B;
+  color: orange;
 }
 
 /* Image Viewer Styles */
@@ -161,7 +161,7 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #FF6B6B;
+  background: orange;
   color: white;
   width: 40px;
   height: 40px;
@@ -177,7 +177,7 @@
 }
 
 .close-viewer-button:hover {
-  background: #ff8585;
+  background: orange;
   transform: rotate(90deg);
 }
 

@@ -114,7 +114,7 @@ const Home = () => {
 
       <section id="about" ref={aboutRef} className="about" data-aos="fade-up">
         <h2 className="section-title">
-          <span className="text-2xl font-bold">About </span>
+          <span className="text-2xl font-bold text-white">About </span>
           <span className="text-2xl font-bold text-orange">Me</span>
         </h2>
         <div className="about-content" data-aos="fade-up" data-aos-delay="200">

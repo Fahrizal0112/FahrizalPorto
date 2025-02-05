@@ -148,7 +148,7 @@ html {
 
 .fill {
   clip: rect(0px, 50px, 100px, 0px);
-  background: #ff6a00; /* Adjust the color as needed */
+  background: orange; /* Adjust the color as needed */
 }
 
 .inside-circle {
@@ -251,7 +251,7 @@ html {
   
   .fill {
     clip: rect(0px, 50px, 100px, 0px);
-    background: #ff6a00; /* Adjust the color as needed */
+    background: orange; /* Adjust the color as needed */
   }
   
   .inside-circle {
@@ -411,7 +411,7 @@ html {
   
   .fill {
     clip: rect(0px, 50px, 100px, 0px);
-    background: #ff6a00; /* Adjust the color as needed */
+    background: orange; /* Adjust the color as needed */
   }
   
   .inside-circle {
@@ -537,7 +537,7 @@ html {
   
   .fill {
     clip: rect(0px, 50px, 100px, 0px);
-    background: #ff6a00; 
+    background: orange; 
   }
   
   .inside-circle {
@@ -578,13 +578,13 @@ html {
 }
 
 .primary-btn {
-  background-color: #ff6a00;
+  background-color: orange;
   color: white;
 }
 
 .secondary-btn {
-  border: 2px solid #ff6a00;
-  color: #ff6a00;
+  border: 2px solid orange;
+  color: orange;
 }
 
 .primary-btn:hover, .secondary-btn:hover {
@@ -650,7 +650,7 @@ html {
 
 .skill-icon i {
   font-size: 2.5rem;
-  color: #ff6a00;
+  color: orange;
 }
 
 .skill-card h3 {
@@ -676,7 +676,7 @@ html {
 }
 
 .skill-percentage {
-  color: #FF6B6B;
+  color: orange;
 }
 
 .skill-bar {
@@ -756,7 +756,7 @@ html {
 }
 
 .skill-percentage {
-  color: #FF6B6B;
+  color: orange;
   font-weight: 500;
 }
 
