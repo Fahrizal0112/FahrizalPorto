@@ -1,26 +1,26 @@
 /* src/components/Style/Header.css */
 .header {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: #2E2F34;
   color: rgb(255, 255, 255);
-  padding: 10px;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000; 
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header h1 {
-  margin: 0; 
-  margin-right: 30px; /* Mengurangi jarak antara h1 dan navbar */
+  margin: 0;
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   font-style: normal;
   color: #ffff;
-  font-size: 34px; /* Menyesuaikan ukuran font */
+  font-size: 34px;
 }
 
 .text-white {
@@ -86,27 +86,31 @@
 }
 
 @media screen and (max-width: 500px) {
+  .header {
+    padding: 15px 20px;
+  }
+
   .header nav {
     display: none;
     position: absolute;
-    top: 60px;
-    right: 0;
+    top: 100%;
+    left: 0;
     background: #2E2F34;
     width: 100%;
-    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
 
   .header nav.open {
-    display: flex;
-    flex-direction: column;
+    display: block;
   }
 
   .header nav ul {
     flex-direction: column;
+    padding: 20px 0;
   }
 
   .header nav ul li {
-    margin: 10px 0;
+    margin: 15px 0;
   }
 
   .menu-icon {

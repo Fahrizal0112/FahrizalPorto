@@ -1,38 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Style/Project.css';
-import 'animate.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Style/Project.css";
+import "animate.css";
 
 const projects = [
   {
     id: 1,
-    title: 'IOT Fish Feeder',
-    link: '/project/1',
-    category: 'IoT & ML'
+    title: "IOT Fish Feeder",
+    link: "/project/1",
+    category: "IoT & ML",
   },
   {
     id: 2,
-    title: 'Notetify',
-    link: '/project/2',
-    category: 'Web App'
+    title: "Notetify",
+    link: "/project/2",
+    category: "Web App",
   },
   {
     id: 3,
-    title: 'Fitmate',
-    link: '/project/3',
-    category: 'Mobile & ML'
+    title: "Fitmate",
+    link: "/project/3",
+    category: "Mobile & ML",
   },
   {
     id: 4,
-    title: 'Parkol',
-    link: '/project/4',
-    category: 'IoT'
+    title: "Parkol",
+    link: "/project/4",
+    category: "IoT",
   },
   {
     id: 5,
-    title: 'FinGoal',
-    link: '/project/5',
-    category: 'Finance'
+    title: "FinGoal",
+    link: "/project/5",
+    category: "Mobile & ML",
   },
 ];
 
@@ -43,12 +43,12 @@ const Project = () => {
         <span className="text-white">My </span>
         <span className="text-orange">Projects</span>
       </h1>
-      
+
       <div className="project-container">
         {projects.map((project, index) => (
-          <Link 
-            to={project.link} 
-            key={project.id} 
+          <Link
+            to={project.link}
+            key={project.id}
             className="project-card"
             data-aos="fade-up"
             data-aos-delay={index * 100}
