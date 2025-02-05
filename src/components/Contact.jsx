@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'animate.css';
 import emailjs from 'emailjs-com';
 import './Style/Contact.css';
+import { sha256 } from 'crypto-js';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,17 +14,46 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [canSendEmail, setCanSendEmail] = useState(true);
   const [timeUntilNextEmail, setTimeUntilNextEmail] = useState('');
+  const [attempts, setAttempts] = useState(0);
 
   useEffect(() => {
     checkEmailTimeout();
+    checkAttempts();
     const interval = setInterval(checkEmailTimeout, 1000);
     return () => clearInterval(interval);
   }, []);
 
+  const checkAttempts = () => {
+    const savedAttempts = localStorage.getItem('emailAttempts');
+    const lastAttemptDate = localStorage.getItem('lastAttemptDate');
+    
+    if (savedAttempts && lastAttemptDate) {
+      const today = new Date().toDateString();
+      if (today === lastAttemptDate) {
+        setAttempts(parseInt(savedAttempts));
+        if (parseInt(savedAttempts) >= 3) {
+          setCanSendEmail(false);
+          setTimeUntilNextEmail('besok');
+        }
+      } else {
+        localStorage.setItem('emailAttempts', '0');
+        localStorage.setItem('lastAttemptDate', today);
+        setAttempts(0);
+      }
+    }
+  };
+
+  const generateEmailHash = (email) => {
+    return sha256(email.toLowerCase().trim()).toString();
+  };
+
   const checkEmailTimeout = () => {
     const lastEmailTime = localStorage.getItem('lastEmailTime');
-    if (lastEmailTime) {
-      const nextEmailTime = new Date(parseInt(lastEmailTime) + 24 * 60 * 60 * 1000); // 24 jam
+    const emailHash = localStorage.getItem('emailHash');
+    const currentEmailHash = formData.email ? generateEmailHash(formData.email) : null;
+    
+    if (lastEmailTime && emailHash === currentEmailHash) {
+      const nextEmailTime = new Date(parseInt(lastEmailTime) + 24 * 60 * 60 * 1000);
       const now = new Date();
       
       if (now < nextEmailTime) {
@@ -34,7 +64,6 @@ const Contact = () => {
         setTimeUntilNextEmail(`${hours} jam ${minutes} menit`);
       } else {
         setCanSendEmail(true);
-        localStorage.removeItem('lastEmailTime');
       }
     }
   };
@@ -46,31 +75,70 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!canSendEmail) {
-      alert(`Mohon tunggu ${timeUntilNextEmail} untuk mengirim email lagi.`);
+    
+    if (isSubmitting) {
       return;
     }
 
-    setIsSubmitting(true);
-
     try {
+      const currentAttempts = parseInt(localStorage.getItem('emailAttempts') || '0');
+      if (currentAttempts >= 3) {
+        alert('Anda telah mencapai batas pengiriman email untuk hari ini. Silakan coba lagi besok.');
+        return;
+      }
+
+      const lastEmailTime = localStorage.getItem('lastEmailTime');
+      const emailHash = localStorage.getItem('emailHash');
+      const currentEmailHash = generateEmailHash(formData.email);
+      
+      if (lastEmailTime && emailHash === currentEmailHash) {
+        const nextEmailTime = new Date(parseInt(lastEmailTime) + 24 * 60 * 60 * 1000);
+        const now = new Date();
+        
+        if (now < nextEmailTime) {
+          const timeLeft = nextEmailTime - now;
+          const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          alert(`Mohon tunggu ${hours} jam ${minutes} menit untuk mengirim email lagi.`);
+          return;
+        }
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        alert('Format email tidak valid');
+        return;
+      }
+
+      setIsSubmitting(true);
+
       const serviceID = 'service_ahzwo8f';
       const templateID = 'template_giy5u7n';
       const userID = 'iJymSKnpDAJb-SWEg';
 
-      await emailjs.send(serviceID, templateID, formData, userID);
-      
-      // Animasi sukses
-      const form = e.target;
-      form.classList.add('success');
-      setTimeout(() => form.classList.remove('success'), 2000);
+      const response = await emailjs.send(serviceID, templateID, formData, userID);
 
-      alert('Email berhasil dikirim!');
-      setFormData({ from_name: '', email: '', message: '' });
-      localStorage.setItem('lastEmailTime', new Date().getTime().toString());
-      setCanSendEmail(false);
+      if (response.status === 200) {
+        const newAttempts = currentAttempts + 1;
+        localStorage.setItem('emailAttempts', newAttempts.toString());
+        localStorage.setItem('lastAttemptDate', new Date().toDateString());
+        
+        localStorage.setItem('emailHash', currentEmailHash);
+        localStorage.setItem('lastEmailTime', new Date().getTime().toString());
+        
+        const form = e.target;
+        form.classList.add('success');
+        setTimeout(() => form.classList.remove('success'), 2000);
+
+        setFormData({ from_name: '', email: '', message: '' });
+        setCanSendEmail(false);
+        alert('Email berhasil dikirim!');
+      } else {
+        throw new Error('Gagal mengirim email');
+      }
     } catch (error) {
-      alert('Gagal mengirim email.');
+      console.error('Error:', error);
+      alert('Gagal mengirim email. Silakan coba lagi nanti.');
     } finally {
       setIsSubmitting(false);
     }
