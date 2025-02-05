@@ -33,36 +33,34 @@ import cert27 from "./assets/certificates/27.jpg";
 
 const Certificate = () => {
   const certificates = [
-    { id: 1, image: cert1 },
-    { id: 2, image: cert2 },
-    { id: 3, image: cert3 },
-    { id: 4, image: cert4 },
-    { id: 5, image: cert5 },
-    { id: 6, image: cert6 },
-    { id: 7, image: cert7 },
-    { id: 8, image: cert8 },
-    { id: 9, image: cert9 },
-    { id: 10, image: cert10 },
-    { id: 11, image: cert11 },
-    { id: 12, image: cert12 },
-    { id: 13, image: cert13 },
-    { id: 14, image: cert14 },
-    { id: 15, image: cert15 },
-    { id: 16, image: cert16 },
-    { id: 17, image: cert17 },
-    { id: 18, image: cert18 },
-    { id: 19, image: cert19 },
-    { id: 20, image: cert20 },
-    { id: 21, image: cert21 },
-    { id: 22, image: cert22 },
-    { id: 23, image: cert23 },
-    { id: 24, image: cert24 },
-    { id: 25, image: cert25 },
-    { id: 26, image: cert26 },
-    { id: 27, image: cert27 },
-
+    { id: 1, image: cert1, title: "Web Development" },
+    { id: 2, image: cert2, title: "Cloud Computing" },
+    { id: 3, image: cert3, title: "Cyber Security" },
+    { id: 4, image: cert4, title: "Cyber Security" },
+    { id: 5, image: cert5, title: "Cyber Security" },
+    { id: 6, image: cert6, title: "Cyber Security" },
+    { id: 7, image: cert7, title: "Cyber Security" },
+    { id: 8, image: cert8, title: "Cyber Security" },
+    { id: 9, image: cert9, title: "Cyber Security" },
+    { id: 10, image: cert10, title: "Cyber Security" },
+    { id: 11, image: cert11, title: "Cyber Security" },
+    { id: 12, image: cert12, title: "Cyber Security" },
+    { id: 13, image: cert13, title: "Cyber Security" },
+    { id: 14, image: cert14, title: "Cyber Security" },
+    { id: 15, image: cert15, title: "Cyber Security" },
+    { id: 16, image: cert16, title: "Cyber Security" },
+    { id: 17, image: cert17, title: "Cyber Security" },
+    { id: 18, image: cert18, title: "Cyber Security" },
+    { id: 19, image: cert19, title: "Cyber Security" },
+    { id: 20, image: cert20, title: "Cyber Security" },
+    { id: 21, image: cert21, title: "Cyber Security" },
+    { id: 22, image: cert22, title: "Cyber Security" },
+    { id: 23, image: cert23, title: "Cyber Security" },
+    { id: 24, image: cert24, title: "Cyber Security" },
+    { id: 25, image: cert25, title: "Cyber Security" },
+    { id: 26, image: cert26, title: "Cyber Security" },
+    { id: 27, image: cert27, title: "Cyber Security" },
   ];
-
 
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
@@ -71,44 +69,69 @@ const Certificate = () => {
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
     setIsViewerOpen(true);
+    document.body.style.overflow = 'hidden';
   }, []);
 
   const closeImageViewer = () => {
     setIsViewerOpen(false);
+    document.body.style.overflow = 'unset';
   };
 
   return (
     <section id="certificate" className="certificate animate__animated animate__fadeIn">
-      <h1 className="text-5xl font-bold">
-        <span className="text-white">My </span>
-        <span className="text-orange">Certificates</span>
-      </h1>
-      <div className="certificate-images">
-        {certificates.map((certificate, index) => (
-          <div key={index} className="image-box">
-            <img
-              src={certificate.image}
-              alt={`Certificate ${certificate.id}`}
-              className="certificate-image"
+      <div className="certificate-container">
+        <h1 className="section-title" data-aos="fade-down">
+          <span className="text-white">My </span>
+          <span className="text-orange">Certificates</span>
+        </h1>
+        
+        <div className="certificate-grid">
+          {certificates.map((certificate, index) => (
+            <div 
+              key={index} 
+              className="certificate-card"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
               onClick={() => openImageViewer(index)}
-            />
-          </div>
-        ))}
+            >
+              <div className="certificate-image-wrapper">
+                <img
+                  src={certificate.image}
+                  alt={`Certificate ${certificate.id}`}
+                  className="certificate-image"
+                />
+                <div className="certificate-overlay">
+                  <div className="zoom-icon">
+                    <i className="fas fa-search-plus"></i>
+                    <span>View Certificate</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {isViewerOpen && (
-        <>
+        <div className="certificate-viewer-container">
           <ImageViewer
             src={images}
             currentIndex={currentImage}
-            disableScroll={false}
+            disableScroll={true}
             closeOnClickOutside={true}
             onClose={closeImageViewer}
           />
-          <button className="close-button" onClick={closeImageViewer}>
-            &times;
+          <button 
+            className="close-viewer-button" 
+            onClick={closeImageViewer}
+            aria-label="Close certificate viewer"
+          >
+            <i className="fas fa-times"></i>
           </button>
-        </>
+          <div className="image-counter">
+            {currentImage + 1} / {images.length}
+          </div>
+        </div>
       )}
     </section>
   );

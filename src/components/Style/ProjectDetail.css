@@ -1,87 +1,239 @@
 .project-detail {
-    padding: 20px;
-    background-color: #2E2F34;
-    color: white;
-  }
-  
-  .project-title {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: start;
-  }
-  
-  .project-description {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    text-align: start;
-  }
-  
-  .project-features {
-    font-size: 1em;
-    text-align: start;
-  }
-  
-  .project-features ul {
-    list-style-type: disc;
-    padding-left: 20px;
-  }
-  
-  .project-features li {
-    margin-bottom: 10px;
-  }
-  
-  .project-image {
-    width: 100%;
-    height: auto;
-    max-width: 200px; /* Mengatur lebar maksimum gambar */
-    display: block;
-    margin: 0 auto; /* Menyelaraskan gambar ke tengah dalam kotak gambar */
-  }
-  
-  .image-box1 {
-    width: calc(50% - 300px); /* Setiap gambar mengambil setengah lebar kontainer dikurangi gap */
-    overflow: hidden;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  .image-box1:hover {
-    transform: scale(1.05);
-  }
-  @media screen and (max-width: 500px) {
-    .image-box1 {
-        width: calc(60% - 100px); /* Setiap gambar mengambil setengah lebar kontainer dikurangi gap */
-        overflow: hidden;
-        border-radius: 10px;
-        transition: transform 0.3s ease;
-      }
-      .project-features li {
-        margin-bottom: 20px;
-      }
-  }  
+  padding: 80px 20px;
+  background-color: #2E2F34;
+  color: white;
+  min-height: 100vh;
+}
 
-  .project-image {
-    width: 100%;
-    height: auto;
-    display: block;
+.project-header {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.project-title {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.project-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #FF6B6B;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.image-wrapper {
+  position: relative;
+  padding-top: 75%;
+  overflow: hidden;
+}
+
+.project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.zoom-icon {
+  color: white;
+  text-align: center;
+}
+
+.zoom-icon i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.zoom-icon span {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.gallery-item:hover .project-image {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover .image-overlay {
+  opacity: 1;
+}
+
+.project-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  color: #FF6B6B;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.project-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-features li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.project-features li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #FF6B6B;
+}
+
+/* Image Viewer Styles */
+.image-viewer-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.close-viewer-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #FF6B6B;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.close-viewer-button:hover {
+  background: #ff8585;
+  transform: rotate(90deg);
+}
+
+.image-counter {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  z-index: 1001;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .project-title {
+    font-size: 2rem;
   }
-  
-  .close-button {
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    z-index: 10000; 
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
-    cursor: pointer;
+
+  .project-gallery {
+    grid-template-columns: 1fr;
   }
-  
-  .close-button:hover {
-    background: rgba(0, 0, 0, 0.8);
+
+  .content-section {
+    padding: 0 20px;
   }
+
+  .gallery-item {
+    margin-bottom: 20px;
+  }
+
+  .zoom-icon i {
+    font-size: 1.5rem;
+  }
+
+  .zoom-icon span {
+    font-size: 0.8rem;
+  }
+
+  .close-viewer-button {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+/* Animasi untuk Image Viewer */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
   

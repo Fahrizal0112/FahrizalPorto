@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -7,8 +7,18 @@ import Certificate from './components/Certificate';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Projectdetail from './components/Projectdetails';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const App = () => {
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
   return (
     <Router>
       <div className="App">

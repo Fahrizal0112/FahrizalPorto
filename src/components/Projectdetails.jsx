@@ -135,60 +135,90 @@ const projects = [
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find(project => project.id === parseInt(id));
-
+  
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-  const images = project ? project.images : [];
 
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
     setIsViewerOpen(true);
+    document.body.style.overflow = 'hidden'; // Mencegah scroll saat viewer terbuka
   }, []);
 
   const closeImageViewer = () => {
+    setCurrentImage(0);
     setIsViewerOpen(false);
+    document.body.style.overflow = 'unset'; // Mengembalikan scroll
   };
 
   if (!project) {
-    return <h1>Project not found</h1>;
+    return <div className="not-found">Project not found</div>;
   }
 
   return (
     <section id="project-detail" className="project-detail animate__animated animate__fadeIn">
-      <div className="project-images">
+      <div className="project-header" data-aos="fade-down">
+        <h1 className="project-title text-orange font-bold">{project.title}</h1>
+      </div>
+
+      <div className="project-gallery" data-aos="fade-up">
         {project.images.map((image, index) => (
-          <div key={index} className="image-box1">
-            <img
-              src={image}
-              alt={`Project ${project.id} Image ${index + 1}`}
-              className="project-image"
-              onClick={() => openImageViewer(index)}
-            />
+          <div 
+            key={index} 
+            className="gallery-item"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+            onClick={() => openImageViewer(index)}
+          >
+            <div className="image-wrapper">
+              <img
+                src={image}
+                alt={`Project ${project.id} Image ${index + 1}`}
+                className="project-image"
+              />
+              <div className="image-overlay">
+                <div className="zoom-icon">
+                  <i className="fas fa-search-plus"></i>
+                  <span>Click to zoom</span>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
-      <h1 className="project-title text-orange font-bold">{project.title}</h1>
-      <h2 className='text-orange font-bold text-start text-2xl'>Project Description</h2>
-      <br></br>
-      <p className="project-description">{project.description}</p>
-      <h2 className='text-orange font-bold text-start text-2xl'>Project Features</h2>
-      <br></br>
-      <div className="project-features" dangerouslySetInnerHTML={{ __html: project.fitur }} />
-      <br></br>
+
+      <div className="project-content">
+        <div className="content-section" data-aos="fade-up">
+          <h2 className='section-title'>Project Description</h2>
+          <p className="project-description">{project.description}</p>
+        </div>
+
+        <div className="content-section" data-aos="fade-up">
+          <h2 className='section-title'>Project Features</h2>
+          <div className="project-features" dangerouslySetInnerHTML={{ __html: project.fitur }} />
+        </div>
+      </div>
 
       {isViewerOpen && (
-        <>
+        <div className="image-viewer-container">
           <ImageViewer
-            src={images}
+            src={project.images}
             currentIndex={currentImage}
-            disableScroll={false}
+            disableScroll={true}
             closeOnClickOutside={true}
             onClose={closeImageViewer}
           />
-          <button className="close-button" onClick={closeImageViewer}>
-            &times;
+          <button 
+            className="close-viewer-button" 
+            onClick={closeImageViewer}
+            aria-label="Close image viewer"
+          >
+            <i className="fas fa-times"></i>
           </button>
-        </>
+          <div className="image-counter">
+            {currentImage + 1} / {project.images.length}
+          </div>
+        </div>
       )}
     </section>
   );

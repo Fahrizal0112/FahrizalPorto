@@ -1,52 +1,144 @@
 /* src/components/Style/Contact.css */
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+.contact-section {
+  padding: 80px 20px;
   background-color: #2E2F34;
-  border-radius: 10px;
+  min-height: 100vh;
+  color: white;
 }
 
-.contact-form .form-group {
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #FF6B6B;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.contact-info {
+  padding: 30px;
+}
+
+.info-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+}
+
+.info-item i {
+  font-size: 2rem;
+  color: #FF6B6B;
   margin-bottom: 15px;
 }
 
-.contact-form label {
+.info-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.form-group label {
   display: block;
-  margin-bottom: 5px;
-  color: white;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 1rem;
 }
 
-.contact-form input,
-.contact-form textarea {
+.form-group label i {
+  margin-right: 8px;
+  color: #FF6B6B;
+}
+
+.form-group input,
+.form-group textarea {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #fdfdfd;
-  color: rgb(0, 0, 0); /* Warna teks */
-  font-size: 16px; /* Ukuran font */
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
-  border-color: #ffffff;
+  border-color: #FF6B6B;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
 }
 
 .submit-button {
-  background-color: #f60;
+  width: 100%;
+  padding: 15px;
+  background: #FF6B6B;
   color: white;
-  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 90px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .submit-button:hover {
   background-color: #e55;
+}
+
+.submit-button.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.submit-button.disabled:hover {
+  transform: none;
+  box-shadow: none;
 }
