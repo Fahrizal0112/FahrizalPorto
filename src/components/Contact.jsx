@@ -10,6 +10,7 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,6 +19,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     const serviceID = 'service_ahzwo8f';
     const templateID = 'template_giy5u7n';
@@ -30,6 +32,9 @@ const Contact = () => {
       })
       .catch((error) => {
         alert('Failed to send email.');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
   };
 
@@ -52,7 +57,13 @@ const Contact = () => {
           <label htmlFor="message">Message:</label>
           <textarea id="message" name="message" value={formData.message} onChange={handleChange} required></textarea>
         </div>
-        <button type="submit" className="submit-button">Send</button>
+        <button 
+          type="submit" 
+          className="submit-button" 
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Sending...' : 'Send'}
+        </button>
       </form>
     </section>
   );
