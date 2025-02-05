@@ -9,12 +9,9 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden; 
 }
 
-html {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
 .intro {
   display: flex;
   justify-content: space-between;
