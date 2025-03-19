@@ -24,6 +24,9 @@ import fingoal3 from "./assets/fingoal/3.jpg";
 import fingoal4 from "./assets/fingoal/4.jpg";
 import fingoal5 from "./assets/fingoal/5.jpg";
 import fingoal6 from "./assets/fingoal/6.jpg";
+import eth from "./assets/eth/eth.mov";
+import web3 from "./assets/web3/web3.mov";
+import chatbot from "./assets/chatbot/chatbot.mov";
 
 const projects = [
   {
@@ -109,6 +112,85 @@ const projects = [
     `,
     images: [fingoal1, fingoal2, fingoal3, fingoal4, fingoal5, fingoal6],
   },
+  {
+    id: 6,
+    title: "Ethereum Anomaly Detection",
+    description:
+      "Ethereum Anomaly Detection adalah aplikasi web yang dirancang untuk mendeteksi anomali pada transaksi blockchain Ethereum secara real-time. Aplikasi ini menggunakan metode One Class Graph Neural Network (OCGNN) untuk menganalisis pola transaksi dan mengidentifikasi aktivitas yang mencurigakan atau tidak normal pada jaringan Ethereum. Dengan visualisasi grafik yang interaktif, aplikasi ini memudahkan pengguna untuk memantau dan menganalisis transaksi blockchain dengan lebih efektif.",
+    fitur: `
+      <ul>
+        <li>Deteksi Anomali Real-time: Memantau dan menganalisis transaksi Ethereum secara real-time untuk mengidentifikasi pola yang mencurigakan.</li>
+        <li>Implementasi OCGNN: Menggunakan metode One Class Graph Neural Network yang khusus dioptimalkan untuk deteksi anomali pada data grafik.</li>
+        <li>Visualisasi Grafik Interaktif: Menampilkan transaksi dalam bentuk grafik yang interaktif untuk memudahkan analisis dan pemahaman.</li>
+        <li>Klasifikasi Transaksi: Mengategorikan transaksi sebagai normal atau anomali berdasarkan pola yang diidentifikasi oleh model.</li>
+        <li>Dashboard Analitik: Menyediakan dashboard yang komprehensif dengan metrik dan statistik penting tentang transaksi yang dianalisis.</li>
+        <li>Notifikasi Anomali: Memberikan peringatan saat sistem mendeteksi transaksi yang dianggap anomali.</li>
+        <li>Backend dengan Python dan TensorFlow: Menggunakan Python dan TensorFlow untuk implementasi model machine learning.</li>
+        <li>Frontend dengan React.js: Dibangun dengan React.js untuk antarmuka pengguna yang responsif dan modern.</li>
+        <li>Integrasi Blockchain: Terhubung langsung ke jaringan Ethereum untuk memperoleh data transaksi terbaru.</li>
+      </ul>
+    `,
+    videoUrl: eth,
+    images: [],
+  },
+  {
+    id: 7,
+    title: "Web3 Ticket System",
+    description:
+      "Web3 Ticket System adalah implementasi sistem tiket event berbasis NFT (ERC-721) di blockchain Ethereum. Proyek ini memungkinkan pembuatan, penjualan, dan manajemen tiket event digital yang aman dan terdesentralisasi. Dengan menggunakan teknologi smart contract, sistem ini menghilangkan perantara dalam penjualan tiket, meminimalkan pemalsuan, dan memungkinkan verifikasi yang transparan.",
+    fitur: `
+      <ul>
+        <li>Pembuatan Tiket: Minter dapat membuat tiket event dengan detail seperti nama event, tanggal, dan harga.</li>
+        <li>Sistem Role-Based: Menggunakan AccessControl untuk manajemen role (Admin dan Minter).</li>
+        <li>Jual Beli Tiket: Pengguna dapat membeli dan menjual tiket melalui smart contract.</li>
+        <li>Verifikasi Tiket: Minter dapat memverifikasi dan menandai tiket sebagai "telah digunakan".</li>
+        <li>Manajemen Pendapatan: Sistem pembagian dan penarikan pendapatan untuk minter.</li>
+        <li>Smart Contract Solidity: Mengembangkan smart contract menggunakan Solidity, dengan implementasi standar ERC-721 untuk NFT.</li>
+        <li>Hardhat Development: Menggunakan Hardhat sebagai environment development untuk testing dan deployment.</li>
+        <li>Role Management: Fitur pengelolaan peran seperti addMinter, removeMinter, dan getMinters.</li>
+        <li>Tiket Management: Fungsi createTicket, purchaseTicket, sellTicket, dan useTicket untuk manajemen tiket.</li>
+        <li>Security: Implementasi best practices keamanan seperti role-based access control, safe math operations, dan protection dari serangan reentrancy.</li>
+        <li>Deployment: Di-deploy ke jaringan Sepolia Testnet dengan alamat contract 0x400B7c0a13388bF5D29b3007e97dbf229eBfD8E4.</li>
+      </ul>
+    `,
+    videoUrl: web3,
+    images: [],
+  },
+  {
+    id: 8,
+    title: "AI Chatbot Toko Casing iPhone",
+    description:
+      "Aplikasi chatbot berbasis AI untuk toko casing iPhone menggunakan Flask dan Google Gemini AI. Chatbot ini dirancang untuk memberikan pengalaman berbelanja yang lebih baik dengan membantu pelanggan mendapatkan informasi produk, melakukan pemesanan, dan melacak status pesanan mereka secara otomatis dan efisien.",
+    fitur: `
+      <ul>
+        <li>Chat Interface Modern: Antarmuka chat yang modern dan responsif untuk kemudahan interaksi pengguna.</li>
+        <li>AI-Powered Responses: Menggunakan Google Gemini AI untuk memberikan respons yang cerdas dan kontekstual.</li>
+        <li>Informasi Produk: Menyediakan informasi lengkap tentang berbagai model casing iPhone.</li>
+        <li>Sistem Pemesanan: Fitur pemesanan otomatis yang terintegrasi dengan sistem.</li>
+        <li>Status Tracking: Pelacakan status pesanan secara real-time.</li>
+        <li>Database Integration: Menggunakan PostgreSQL untuk penyimpanan data yang handal.</li>
+        <li>Tech Stack:</li>
+        <ul>
+          <li>Backend: Python 3.9+ dengan Flask framework</li>
+          <li>AI: Google Generative AI (Gemini)</li>
+          <li>Database: PostgreSQL untuk penyimpanan data</li>
+          <li>Frontend: HTML5/CSS3 dan JavaScript untuk UI yang responsif</li>
+          <li>UI Components: Font Awesome Icons untuk elemen visual</li>
+        </ul>
+        <li>Deployment Features:</li>
+        <ul>
+          <li>Virtual Environment: Isolasi dependensi dengan Python venv</li>
+          <li>Database Setup: Konfigurasi PostgreSQL dengan schema management</li>
+          <li>Environment Variables: Manajemen konfigurasi yang aman</li>
+          <li>API Integration: Integrasi dengan Google Gemini API</li>
+        </ul>
+        <li>Security: Implementasi environment variables untuk credential management.</li>
+        <li>Documentation: Dokumentasi lengkap untuk instalasi dan konfigurasi.</li>
+      </ul>
+    `,
+    videoUrl: chatbot,
+    images: [],
+  },
 ];
 
 const ProjectDetail = () => {
@@ -143,31 +225,46 @@ const ProjectDetail = () => {
         <h1 className="project-title text-orange font-bold">{project.title}</h1>
       </div>
 
-      <div className="project-gallery" data-aos="fade-up">
-        {project.images.map((image, index) => (
-          <div
-            key={index}
-            className="gallery-item"
-            data-aos="fade-up"
-            data-aos-delay={index * 100}
-            onClick={() => openImageViewer(index)}
+      {(project.id === 6 || project.id === 7 || project.id === 8) && project.videoUrl && (
+        <div className="video-container" data-aos="fade-up">
+          <video 
+            controls 
+            className="project-video"
+            src={project.videoUrl} 
+            type="video/mp4"
           >
-            <div className="image-wrapper">
-              <img
-                src={image}
-                alt={`Project ${project.id} Image ${index + 1}`}
-                className="project-image"
-              />
-              <div className="image-overlay">
-                <div className="zoom-icon">
-                  <i className="fas fa-search-plus"></i>
-                  <span>Click to zoom</span>
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      )}
+
+      {project.images && project.images.length > 0 && (
+        <div className="project-gallery" data-aos="fade-up">
+          {project.images.map((image, index) => (
+            <div
+              key={index}
+              className="gallery-item"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              onClick={() => openImageViewer(index)}
+            >
+              <div className="image-wrapper">
+                <img
+                  src={image}
+                  alt={`Project ${project.id} Image ${index + 1}`}
+                  className="project-image"
+                />
+                <div className="image-overlay">
+                  <div className="zoom-icon">
+                    <i className="fas fa-search-plus"></i>
+                    <span>Click to zoom</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
       <div className="project-content">
         <div className="content-section" data-aos="fade-up">

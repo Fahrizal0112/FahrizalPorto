@@ -236,4 +236,17 @@
     opacity: 1;
   }
 }
+
+.video-container {
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-video {
+  width: 100%;
+  display: block;
+}
   

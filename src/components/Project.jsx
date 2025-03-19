@@ -34,6 +34,26 @@ const projects = [
     link: "/project/5",
     category: "Mobile & ML",
   },
+  {
+    id: 6,
+    title: "Ethereum Anomaly Detection",
+    link: "/project/6",
+    category: "Blockchain",
+  },
+  {
+    id: 7,
+    title: "Web3 Ticket System",
+    link: "/project/7",
+    category: "Blockchain",
+  },
+  {
+    id: 8,
+    title: "AI Sales Assistant",
+    link: "/project/8",
+    category: "AI",
+  },
+  
+  
 ];
 
 const Project = () => {
