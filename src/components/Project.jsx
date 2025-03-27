@@ -52,6 +52,12 @@ const projects = [
     link: "/project/8",
     category: "AI",
   },
+  {
+    id: 9,
+    title: "AI Flow",
+    link: "/project/9",
+    category: "AI",
+  }
   
   
 ];

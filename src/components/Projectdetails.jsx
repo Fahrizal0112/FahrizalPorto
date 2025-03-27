@@ -27,6 +27,7 @@ import fingoal6 from "./assets/fingoal/6.jpg";
 import eth from "./assets/eth/eth.mov";
 import web3 from "./assets/web3/web3.mov";
 import chatbot from "./assets/chatbot/chatbot.mov";
+import aiflow from "./assets/aiflow/aiflow.mov";
 
 const projects = [
   {
@@ -191,6 +192,32 @@ const projects = [
     videoUrl: chatbot,
     images: [],
   },
+  {
+    id: 9,
+    title: "AI Flow - Platform Pembuatan Model AI",
+    description:
+      "AI Flow adalah platform yang memungkinkan pengguna untuk membuat, melatih, dan mengelola model AI khususnya untuk analisis sentimen melalui API yang mudah digunakan.",
+    fitur: `
+      <ul>
+        <li>Pembuatan model AI otomatis: Memungkinkan pengguna membuat model AI tanpa perlu keahlian pemrograman yang mendalam.</li>
+        <li>Training model dengan dataset custom: Pengguna dapat melatih model menggunakan dataset mereka sendiri untuk hasil yang lebih akurat.</li>
+        <li>Monitoring proses training: Fitur untuk memantau kemajuan dan performa model selama proses pelatihan.</li>
+        <li>Download model yang sudah dilatih: Pengguna dapat mengunduh model yang telah dilatih untuk digunakan secara lokal.</li>
+        <li>API untuk prediksi real-time: Menyediakan API yang memungkinkan integrasi model untuk prediksi secara real-time.</li>
+        <li>Tech Stack:</li>
+        <ul>
+          <li>FastAPI: Framework backend yang cepat dan modern</li>
+          <li>PostgreSQL: Database untuk penyimpanan data yang handal</li>
+          <li>MLflow: Platform untuk tracking dan manajemen model machine learning</li>
+          <li>Scikit-learn: Library machine learning untuk pembuatan model</li>
+          <li>Joblib: Library untuk serialisasi model</li>
+          <li>Redis & Celery: Sistem untuk mengelola background tasks dan antrian</li>
+        </ul>
+      </ul>
+    `,
+    videoUrl: aiflow,
+    images: [],
+  },
 ];
 
 const ProjectDetail = () => {
@@ -225,7 +252,7 @@ const ProjectDetail = () => {
         <h1 className="project-title text-orange font-bold">{project.title}</h1>
       </div>
 
-      {(project.id === 6 || project.id === 7 || project.id === 8) && project.videoUrl && (
+      {(project.id === 6 || project.id === 7 || project.id === 8 || project.id === 9) && project.videoUrl && (
         <div className="video-container" data-aos="fade-up">
           <video 
             controls 
