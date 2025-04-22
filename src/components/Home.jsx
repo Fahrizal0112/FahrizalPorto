@@ -34,7 +34,7 @@ const Home = () => {
   const mySkillRef = useRef(null);
 
   useEffect(() => {
-    const texts = ["Developer", "Freelancer", "Problem Solver"];
+    const texts = ["Developer", "Programmer", "Problem Solver"];
     let index = 0;
 
     const interval = setInterval(() => {
